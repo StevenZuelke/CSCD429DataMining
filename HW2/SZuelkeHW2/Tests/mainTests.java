@@ -77,4 +77,17 @@ public class mainTests {
         assertEquals(1929, testSet.size());
     }
 
+    @Test
+    public void Read_Keys_Success(){
+        //Arrange
+
+        //Act
+        ArrayList<String[]> keys = main.readKeys();
+        System.out.println("Keys");
+        System.out.println(keys.get(381)[0] + " " + keys.get(381)[1]);
+        //Assert
+        assertEquals(382, keys.size());
+    }
+
+
 }
