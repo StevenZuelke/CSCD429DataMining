@@ -19,6 +19,7 @@ public class Main {
             System.out.println();
         }
         saveClusters();
+        saveRapidMinerClusters();
     }
 
     private static void saveClusters() throws IOException {
@@ -31,6 +32,22 @@ public class Main {
                     fw.write(clusterList.get(i).get(j)[k].toString()+" ");
                 }
                 fw.write("\n");
+            }
+            fw.close();
+        }
+    }
+
+    private static void saveRapidMinerClusters() throws IOException {
+        for(int i = 0; i < clusterList.size(); i++){
+            String fileName = "rapidcluster"+i+".txt";
+            File file = new File(fileName);
+            FileWriter fw = new FileWriter(file);
+            for(int j = 0; j < clusterList.get(i).size(); j++){
+                for(int k = 0; k < 60; k++){
+                    fw.write(k + " " + clusterList.get(i).get(j)[k].toString()+" ");
+                    fw.write("\n");
+                }
+
             }
             fw.close();
         }
